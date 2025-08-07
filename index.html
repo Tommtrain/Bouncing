@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncing</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="description" content="Bouncers is an experimental TikTok companion that auto-generates ultra-satisfying short videos through smart scripting and on-device AI. Prototype new formats, A/B-test hooks and iterate at lightning speed — all inside the TikTok ecosystem.">
+
+  <!-- Styles globaux -->
+  <style>
+  
+    :root{
+      --bg:#0d0d0d;
+      --txt:#fafafa;
+      --accent:#f5c400; /* jaune du logo */
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      height:100vh;
+      font-family:system-ui, sans-serif;
+      color:var(--txt);
+      background:var(--bg);
+      overflow:hidden;
+    }
+
+    /* --- Cercles animés --- */
+    #animated-bg{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.9) 0 10%, transparent 11%),
+        radial-gradient(circle at center, rgba(204,0,0,0.7) 0 13%, transparent 14%),
+        radial-gradient(circle at center, rgba(245,196,0,0.9) 0 16%, transparent 17%);
+      background-size: 30% 30%, 45% 45%, 60% 60%;
+      background-repeat:no-repeat;
+      background-position:50% 50%;
+      animation: spin 16s infinite linear;
+      filter: blur(30px);
+    }
+    @keyframes spin{
+      to{transform:rotate(360deg);}
+    }
+
+    /* --- Contenu principal --- */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.5rem 2rem;
+    }
+    nav a{
+      margin-left:1.5rem;
+      color:var(--txt);
+      text-decoration:none;
+      font-weight:600;
+      transition:color .3s;
+    }
+    nav a:hover{color:var(--accent);}
+
+    main{
+      height:calc(100vh - 110px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      gap:1rem;
+      padding:0 2rem;
+    }
+    h1{font-size:clamp(2.2rem, 4vw, 3.5rem);}
+    p{max-width:120ch;line-height:1.6;font-size:1.1rem;}
+    .cta{
+      margin-top:1.5rem;
+      padding:.9rem 2rem;
+      background:var(--accent);
+      color:var(--bg);
+      font-weight:700;
+      border:none;
+      border-radius:9999px;
+      cursor:pointer;
+      transition:opacity .3s;
+    }
+    .cta:hover{opacity:.85;}
+
+    /* --- Responsive ajustements --- */
+    @media (max-width:500px){
+      nav a{margin-left:.8rem;font-size:.9rem;}
+    }
+  </style>
+</head>
+<body>
+  <div id="animated-bg"></div>
+
+  <header>
+    <img src="logo.png" alt="Logo Bouncers" style="height:48px;width:auto">
+    <nav>
+      <a href="index.html">Main</a>
+      <a href="tos.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Bouncing</h1>
+    <p>
+      Bouncers is an experimental TikTok companion that auto-generates
+  ultra-satisfying short-form videos through a blend of smart scripting,
+  motion templates and on-device AI.  
+  Built for creators, brands and curious engineers, the app lets you
+  prototype new visual formats, A/B-test hooks and iterate at lightning speed
+  — all inside the TikTok ecosystem.
+    </p>
+    <button class="cta" onclick="location.href='https://www.tiktok.com/@bouncingcircle'">
+      See on Tiktok
+    </button>
+  </main>
+</body>
+</html>
